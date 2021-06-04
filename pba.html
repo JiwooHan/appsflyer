@@ -2,8 +2,7 @@
 <head>
     <!-- Assume that data about products in the shopping cart
     is stored in localStorage -->
-    <meta charset="utf-8"
-    <script>
+        <script>
         window.onload = function () {
             document.getElementById('checkout').addEventListener('click', function () {
                 AF('pba', 'event', {eventType: 'EVENT', eventValue: {'category' : 'holiday_promotion'}, eventName: 'checkout'});
