@@ -1,33 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- Assume that data about products in the shopping cart
-    is stored in localStorage -->
-        <script>
-        window.onload = function () {
-            document.getElementById('checkout').addEventListener('click', function () {
-                AF('pba', 'event', {eventType: 'EVENT', eventValue: {'category' : 'holiday_promotion'}, eventName: 'checkout'});
-            });
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Web Page</title>
+    <!-- AppsFlyer SDK code snippet -->
+    <script>
+    !function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
+    (t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},
+    t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,
+    o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
+    p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF", "pba,banners",{pba: {webAppId: "WEB_DEV_KEY"}, banners: {key: "YOUR_BANNER_KEY"}});
+    AF('banners', 'showBanner');
     </script>
+
 </head>
 <body>
-    <h1>Shopping Cart</h1>
-    <h2>Shirt</h2>
-    <p>
-        <ul>
-            <li>Color: Blue</li>
-            <li>Quantity: 2</li>
-            <li>Price: $20</li>
-        </ul>
-    </p>
-    <h2>Pants</h2>
-    <p>
-        <ul>
-            <li>Color: Black</li>
-            <li>Quantity: 3</li>
-            <li>Price: $15</li>
-        </ul>
-    </p>
-    <button id='checkout'>Checkout</button>
+    <header>
+        <h1>Adaptive Web Page</h1>
+    </header>
+    <main>
+        <section class="login-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="user-id">User ID:</label>
+                <input type="text" id="user-id" name="user-id" placeholder="Enter your user ID">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="url-section">
+            <h2>URL Caller</h2>
+            <label for="url-input">Enter URL:</label>
+            <input type="text" id="url-input" name="url-input" placeholder="https://www.example.com">
+            <button id="call-url-button">Call URL</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Adaptive Web Page. All rights reserved.</p>
+    </footer>
+    <!-- Add your scripts here -->
 </body>
 </html>
