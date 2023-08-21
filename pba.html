@@ -21,7 +21,7 @@
 
     var userId = document.getElementById('user-id').value;
     if (userId) {
-        AF('setCustomerUserId', userId);
+        AF('pba','setCustomerUserId', userId);
         console.log('User ID has been set as:', userId);
     } else {
         console.log('User ID is empty.');
