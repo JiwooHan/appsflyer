@@ -13,6 +13,21 @@
     p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF", "pba,banners",{pba: {webAppId: "cdd87c1c-7c80-43b1-a5f5-73b7b8cd30a7"}, banners: {key: "YOUR_BANNER_KEY"}});
     AF('banners', 'showBanner');
     </script>
+    <script>
+
+
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var userId = document.getElementById('user-id').value;
+    if (userId) {
+        AF('setCustomerUserId', userId);
+        console.log('User ID has been set as:', userId);
+    } else {
+        console.log('User ID is empty.');
+    }
+});
+</script>
 
 </head>
 <body>
@@ -26,13 +41,8 @@
                 <label for="user-id">User ID:</label>
                 <input type="text" id="user-id" name="user-id" placeholder="Enter your user ID">
                 <button type="submit">Submit</button>
+            
             </form>
-        </section>
-        <section class="url-section">
-            <h2>URL Caller</h2>
-            <label for="url-input">Enter URL:</label>
-            <input type="text" id="url-input" name="url-input" placeholder="https://www.example.com">
-            <button id="call-url-button">Call URL</button>
         </section>
     </main>
     <footer>
