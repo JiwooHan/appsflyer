@@ -13,19 +13,21 @@
     p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF", "pba,banners",{pba: {webAppId: "cdd87c1c-7c80-43b1-a5f5-73b7b8cd30a7"}, banners: {key: "YOUR_BANNER_KEY"}});
     AF('banners', 'showBanner');
     </script>
+    
     <script>
-
-
+    document.addEventListener("DOMContentLoaded", function() {
+    // Your JavaScript code here
     document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    var userId = document.getElementById('user-id').value;
-    if (userId) {
-        AF('pba','setCustomerUserId', userId);
-        console.log('User ID has been set as:', userId);
-    } else {
-        console.log('User ID is empty.');
-    }
+        var userId = document.getElementById('user-id').value;
+        if (userId) {
+            AF('pba','setCustomerUserId', userId);
+            console.log('User ID has been set as:', userId);
+        } else {
+            console.log('User ID is empty.');
+        }
+    });
 });
 </script>
 
